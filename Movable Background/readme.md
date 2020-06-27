@@ -1,7 +1,7 @@
-![Movable Background](/resources/preview.png "Movable Background")
+![Movable Background](resources/preview.png "Movable Background")
 # Movable Background
-¥D­n¬Oµ¹ *[Wallpaper Engine](https://store.steampowered.com/app/431960/Wallpaper_Engine/ "¡uWallpaper Engine¡v Official")* ¨Ï¥Îªº
+ä¸»è¦æ˜¯çµ¦ *[Wallpaper Engine](https://store.steampowered.com/app/431960/Wallpaper_Engine/ "ã€ŒWallpaper Engineã€ Official")* ä½¿ç”¨çš„
 ***
 ### History
 * 1.0.1
-  > §¹¦¨¡I
+  > å®Œæˆï¼
