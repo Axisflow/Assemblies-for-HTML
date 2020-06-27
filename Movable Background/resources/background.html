@@ -1,0 +1,94 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Movable Background</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <META NAME="keywords" CONTENT="Background, Wallpaper Engine, Axialflow" />
+    <META NAME="description" CONTENT="Movable Background for 「Wallpaper Engine」" />
+    <META HTTP-EQUIV="Content-Language" CONTENT="ZH-TW" />
+    <META NAME="author" CONTENT="Axialflow" />
+    <META NAME="content-author" CONTENT="Axialflow" />
+    <META NAME="code-author" CONTENT="Axialflow" />
+    <META NAME="distribution" CONTENT="Global" />
+    <META NAME="content-license" CONTENT="MIT" />
+    <META NAME="code-license" CONTENT="MIT" />
+
+    <script type="text/javascript">
+        // Detect if the browser is IE or not.
+        // If it is not IE, we assume that the browser is NS.
+        var IE = document.all ? true : false;
+
+        // If NS -- that is, !IE -- then set up for mouse capture
+        if (!IE) { document.captureEvents(Event.MOUSEMOVE) }
+
+        // Set-up to use getMouseXY function onMouseMove
+        document.onmousemove = getMouseXY;
+
+        // Temporary variables to hold mouse x-y pos.s
+        var tempX = 0;
+        var tempY = 0;
+
+        // Main function to retrieve mouse x-y pos.s
+
+        function getMouseXY(e) {
+            if (IE) { // grab the x-y pos.s if browser is IE
+                tempX = event.clientX + document.body.scrollLeft;
+                tempY = event.clientY + document.body.scrollTop;
+            } else {  // grab the x-y pos.s if browser is NS
+                tempX = e.pageX;
+                tempY = e.pageY;
+            }
+            // catch possible negative values in NS4
+            if (tempX < 0) { tempX = 0 }
+            if (tempY < 0) { tempY = 0 }
+
+            if (tempX < 100 && tempY < 50) { document.getElementById("image-input").style.visibility = "visible"; }
+            else { document.getElementById("image-input").style.visibility = "hidden"; }
+
+            var bg = document.getElementById("Background");
+            bg.style.top = - (tempY - window.innerHeight / 2) / 30 - window.innerHeight * 1.1 / 30 + "px";
+            bg.style.left = - (tempX - window.innerWidth / 2) / 30 - window.innerWidth * 1.1 / 30 + "px";
+            return true;
+        }
+        //
+        //
+        //
+        document.onkeydown = function (e) {
+            if (e.keyCode === 115) {
+                document.getElementById("image-input").click();
+            }
+        };
+
+        function handleFileToImg(file) {
+            var res = file[0];
+            var imageType = /image.*/;
+        
+            if (!res.type.match(imageType)) {
+                alert("Type Error!");
+                return;
+            }
+
+            var img = document.getElementById("Background");
+            img.file = res;
+
+            var reader = new FileReader();
+            reader.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; }; })(img);
+            reader.readAsDataURL(res);
+        }
+    </script>
+    <style type="text/css">
+        #Background {
+            height: 110%;
+            width: 110%;
+            top: calc(-110% / 30);
+            left: calc(-110% / 30);
+        }
+    </style>
+</head>
+
+<body style="margin:0;" onload="">
+    <img style="position:fixed" src="bg.png" id="Background" />
+    <input id="image-input" type="file" name="name" onchange="handleFileToImg(this.files)" style="visibility: hidden;position: absolute;" />
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+	"file" : "background.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.2 0.2 0.2"
+			}
+		}
+	},
+        "official" : true,
+	"preview" : "preview.png",
+	"title" : "Movable Background",
+	"type" : "web",
+	"version" : 0,
+        "visibility" : "public"
+}
