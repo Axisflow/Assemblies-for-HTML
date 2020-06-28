@@ -17,6 +17,6 @@
 	"preview" : "preview.png",
 	"title" : "Movable Background",
 	"type" : "web",
-	"version" : 0,
+	"version" : 1.0.2,
         "visibility" : "public"
 }

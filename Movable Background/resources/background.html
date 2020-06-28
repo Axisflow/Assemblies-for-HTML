@@ -11,8 +11,6 @@
     <META NAME="content-author" CONTENT="Axialflow" />
     <META NAME="code-author" CONTENT="Axialflow" />
     <META NAME="distribution" CONTENT="Global" />
-    <META NAME="content-license" CONTENT="MIT" />
-    <META NAME="code-license" CONTENT="MIT" />
 
     <script type="text/javascript">
         // Detect if the browser is IE or not.
@@ -49,6 +47,8 @@
             var bg = document.getElementById("Background");
             bg.style.top = - (tempY - window.innerHeight / 2) / 30 - window.innerHeight * 1.1 / 30 + "px";
             bg.style.left = - (tempX - window.innerWidth / 2) / 30 - window.innerWidth * 1.1 / 30 + "px";
+            external(tempX, tempY);
+
             return true;
         }
         //
@@ -89,6 +89,9 @@
 
 <body style="margin:0;" onload="">
     <img style="position:fixed" src="bg.png" id="Background" />
+    
+    <script type="text/javascript" src="external.js"></script>
+
     <input id="image-input" type="file" name="name" onchange="handleFileToImg(this.files)" style="visibility: hidden;position: absolute;" />
 </body>
 </html>
