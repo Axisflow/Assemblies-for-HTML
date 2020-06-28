@@ -3,6 +3,8 @@
 主要是給 *[Wallpaper Engine](https://store.steampowered.com/app/431960/Wallpaper_Engine/ "「Wallpaper Engine」 Official")* 使用的
 ***
 ### History
+* 1.0.2.1
+  > 1. 修復 **external.js 「時間倒數」小部件** 不能更新時間的小錯誤
 * 1.0.2
   > 1. 增加 **external.js** 可自行增加元件(內有範例)
   >
