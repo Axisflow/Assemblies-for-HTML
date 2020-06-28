@@ -14,9 +14,18 @@ function external(X, Y) {
 
 var day = document.getElementById("en_day");
 
-var oDate1 = new Date(Date.now());
-var oDate2 = new Date(2021,0,23);
+var oDate2 = new Date(2021, 0, 23);
 
-cDay = (oDate2 - oDate1) / (1000 * 60 * 60 * 24);
+function updateDate() {
+    var oDate1 = new Date(Date.now());
+
+    cDay = (oDate2 - oDate1) / (1000 * 60 * 60 * 24);
+}
+
+updateDate();
 
 day.innerText = parseInt(cDay);
+
+function Loaded() {
+    var timeoutID = setInterval(updateDate(), 60000);
+}
