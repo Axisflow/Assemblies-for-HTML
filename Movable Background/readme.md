@@ -3,6 +3,8 @@
 主要是給 *[Wallpaper Engine](https://store.steampowered.com/app/431960/Wallpaper_Engine/ "「Wallpaper Engine」 Official")* 使用的
 ***
 ### History
+* 1.0.3.1
+  > 1. 調整 **external.js 「時間倒數」小部件** 的透明度
 * 1.0.3
   > 1. 可以記錄並重新使用上次開啟的圖片
 * 1.0.2.1

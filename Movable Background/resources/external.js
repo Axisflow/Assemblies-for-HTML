@@ -1,5 +1,5 @@
 
-var externalText = "<div id=\"external\" style=\"position: fixed;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%;animation: txcc 30s linear 0s infinite;\"><p style=\"font-size:50px;\">學測倒數</p><p id=\"en_day\" style=\"font-size:250px;margin:5px;\"></p></div>";
+var externalText = "<div id=\"external\" style=\"position: fixed;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%;opacity: 0.75;animation: txcc 30s linear 0s infinite;\"><p style=\"font-size:50px;\">學測倒數</p><p id=\"en_day\" style=\"font-size:250px;margin:5px;\"></p></div>";
 
 document.write(externalText);
 
