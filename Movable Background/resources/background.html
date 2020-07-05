@@ -73,8 +73,20 @@
             img.file = res;
 
             var reader = new FileReader();
-            reader.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; }; })(img);
+            reader.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; localStorage.setItem("tempImage", e.target.result); }; })(img);
             reader.readAsDataURL(res);
+        }
+
+        function hasTemp() {
+            if (typeof (Storage) !== "undefined") {
+                var temp = localStorage.getItem("tempImage");
+                if (temp != null) {
+                    document.getElementById("Background").src = localStorage.getItem("tempImage");
+		    window.stop();
+                }
+            } else {
+                alert("Not Support!");
+            }
         }
     </script>
     <style type="text/css">
@@ -88,7 +100,7 @@
 </head>
 
 <body style="margin:0;" onload="Loaded();">
-    <img style="position:fixed" src="bg.png" id="Background" />
+    <img style="position:fixed" src="bg.png" id="Background" onload="hasTemp();" />
     
     <script type="text/javascript" src="external.js"></script>
 
